@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="900" viewBox="0 0 760 900" role="img" aria-labelledby="title description">
+  <title id="title">Diagrama de flujo: cotización de recorrido</title>
+  <desc id="description">Inicio, lectura de recorrido, precio y personas, cálculo del total, anticipo y saldo, salida de resultados y fin.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .node { fill: #eff6ff; stroke: #1d4ed8; stroke-width: 2.5; }
+      .terminal { fill: #dcfce7; stroke: #15803d; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #334155; stroke-width: 2.5; marker-end: url(#arrow); }
+      .label { fill: #172554; font: 20px sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+  <rect width="760" height="900" fill="#ffffff"/>
+
+  <ellipse class="terminal" cx="380" cy="55" rx="100" ry="34"/>
+  <text class="label" x="380" y="55">Inicio</text>
+
+  <path class="flow" d="M380 89 V125"/>
+  <polygon class="node" points="220,130 540,130 510,205 190,205"/>
+  <text class="label" x="365" y="158">
+    <tspan x="365" dy="0">Leer nombre del recorrido,</tspan>
+    <tspan x="365" dy="26">precio por persona y personas</tspan>
+  </text>
+
+  <path class="flow" d="M380 205 V248"/>
+  <rect class="node" x="230" y="255" width="300" height="74" rx="4"/>
+  <text class="label" x="380" y="292">total ← precio × personas</text>
+
+  <path class="flow" d="M380 329 V372"/>
+  <rect class="node" x="230" y="379" width="300" height="74" rx="4"/>
+  <text class="label" x="380" y="416">anticipo ← Redon(total × 0.30)</text>
+
+  <path class="flow" d="M380 453 V496"/>
+  <rect class="node" x="230" y="503" width="300" height="74" rx="4"/>
+  <text class="label" x="380" y="540">saldo ← total − anticipo</text>
+
+  <path class="flow" d="M380 577 V620"/>
+  <polygon class="node" points="220,625 540,625 510,725 190,725"/>
+  <text class="label" x="365" y="660">
+    <tspan x="365" dy="0">Mostrar recorrido, total,</tspan>
+    <tspan x="365" dy="27">anticipo y saldo</tspan>
+  </text>
+
+  <path class="flow" d="M380 725 V785"/>
+  <ellipse class="terminal" cx="380" cy="825" rx="100" ry="34"/>
+  <text class="label" x="380" y="825">Fin</text>
+</svg>
